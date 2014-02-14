@@ -10,28 +10,29 @@
   */
 class Loewenstark_Performance_Model_Observer
 {
-    const CACHETAG = 'sales_quote_config_get_product_attributes';
-    
+    /**
+     * 
+     * @param object $observer
+     */
     public function addProductQuoteConfigAttributes($observer)
     {
-        if(Mage::app()->useCache('eav') && Mage::app()->loadCache(self::CACHETAG))
+        $cachetag = 'magesetup_quote_attributes';
+        if(Mage::app()->useCache('eav') && Mage::app()->loadCache($cachetag))
         {
-            foreach(explode(',', Mage::app()->loadCache(self::CACHETAG)) as $_cacheRow)
+            foreach(explode(',', Mage::app()->loadCache($cachetag)) as $_cacheRow)
             {
                 $observer->getAttributes()->setData($_cacheRow, '');
             }
         } else {
-            $attributes = $observer->getAttributes()->getData();
             $collection = Mage::getResourceModel('catalog/product_attribute_collection')
                     ->setItemObjectClass('catalog/resource_eav_attribute')
-                    ->addFieldToFilter('additional_table.is_visible_on_checkout', array('gt' => 0))
-                    ->addFieldToFilter('attribute_code', array('nin' => $attributes));
+                    ->addFieldToFilter('additional_table.is_visible_on_checkout', 1);
             $attrList = array();
             foreach($collection as $_attribute) {
                 $attrList[] = $_attribute->getAttributeCode();
                 $observer->getAttributes()->setData($_attribute->getAttributeCode(), '');
             }
-            Mage::app()->saveCache(implode(',', $attrList), self::CACHETAG, array('eav'), false);
+            Mage::app()->saveCache(implode(',', $attrList), $cachetag, array('eav'), false);
         }
     }
 }
