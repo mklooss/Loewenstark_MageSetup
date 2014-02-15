@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <!--
 /**
-  * Loewenstark_GermanSetup
+  * Loewenstark_MageSetup
   *
   * @category  Loewenstark
-  * @package   Loewenstark_GermanSetup
+  * @package   Loewenstark_MageSetup
   * @author    Mathis Klooss <m.klooss@loewenstark.com>
   * @copyright 2013 Loewenstark Web-Solution GmbH (http://www.mage-profis.de/). All rights served.
   * @license   https://github.com/mklooss/Loewenstark_UrlIndexer/blob/master/README.md
@@ -15,12 +15,12 @@
 -->
 <config>
     <modules>
-        <Loewenstark_GermanSetup>
+        <Loewenstark_MageSetup>
             <active>true</active>
             <codePool>community</codePool>
             <depends>
-                <FireGento_GermanSetup />
+                <FireGento_MageSetup />
             </depends>
-        </Loewenstark_GermanSetup>
+        </Loewenstark_MageSetup>
     </modules>
 </config>
