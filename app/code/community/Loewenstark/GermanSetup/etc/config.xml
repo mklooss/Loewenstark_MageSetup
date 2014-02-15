@@ -8,6 +8,9 @@
   * @author    Mathis Klooss <m.klooss@loewenstark.com>
   * @copyright 2013 Loewenstark Web-Solution GmbH (http://www.mage-profis.de/). All rights served.
   * @license   https://github.com/mklooss/Loewenstark_UrlIndexer/blob/master/README.md
+  *
+  * provides the patch in checkout:
+  * https://github.com/firegento/firegento-magesetup/commit/79806e685f2c064b65305e472c25956248601147
   */
 -->
 <config>

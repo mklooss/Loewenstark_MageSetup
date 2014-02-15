@@ -8,6 +8,9 @@
   * @author    Mathis Klooss <m.klooss@loewenstark.com>
   * @copyright 2013 Loewenstark Web-Solution GmbH (http://www.mage-profis.de/). All rights served.
   * @license   https://github.com/mklooss/Loewenstark_UrlIndexer/blob/master/README.md
+  * 
+  * if your using FireGento_MageSetup you do not need this Patch
+  * https://github.com/mklooss/Loewenstark_MageSetup
   */
 -->
 <config>
