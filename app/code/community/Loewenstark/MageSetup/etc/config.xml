@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <!--
 /**
-  * Loewenstark_GermanSetup
+  * Loewenstark_MageSetup
   *
   * @category  Loewenstark
-  * @package   Loewenstark_GermanSetup
+  * @package   Loewenstark_MageSetup
   * @author    Mathis Klooss <m.klooss@loewenstark.com>
   * @copyright 2013 Loewenstark Web-Solution GmbH (http://www.mage-profis.de/). All rights served.
   * @license   https://github.com/mklooss/Loewenstark_UrlIndexer/blob/master/README.md
@@ -15,34 +15,34 @@
 -->
 <config>
     <modules>
-        <Loewenstark_GermanSetup>
+        <Loewenstark_MageSetup>
             <version>1.0.0.0</version>
-        </Loewenstark_GermanSetup>
+        </Loewenstark_MageSetup>
     </modules>
     <global>
         <helpers>
-            <loewenstark_germansetup>
-                <class>Loewenstark_GermanSetup_Helper</class>
-            </loewenstark_germansetup>
+            <loewenstark_magesetup>
+                <class>Loewenstark_MageSetup_Helper</class>
+            </loewenstark_magesetup>
             <catalog>
                 <rewrite>
-                    <product_configuration>Loewenstark_GermanSetup_Helper_Catalog_Product_Configuration</product_configuration>
+                    <product_configuration>Loewenstark_MageSetup_Helper_Catalog_Product_Configuration</product_configuration>
                 </rewrite>
             </catalog>
         </helpers>
         <models>
-            <loewenstark_germansetup>
-                <class>Loewenstark_GermanSetup_Model</class>
-            </loewenstark_germansetup>
+            <loewenstark_magesetup>
+                <class>Loewenstark_MageSetup_Model</class>
+            </loewenstark_magesetup>
         </models>
         <events>
             <sales_quote_config_get_product_attributes>
                 <observers>
-                    <loewenstark_germansetup_sales_quote_config_get_product_attributes>
+                    <loewenstark_magesetup_sales_quote_config_get_product_attributes>
                         <type>singleton</type>
-                        <class>loewenstark_germansetup/observer</class>
+                        <class>loewenstark_magesetup/observer</class>
                         <method>addProductQuoteConfigAttributes</method>
-                    </loewenstark_germansetup_sales_quote_config_get_product_attributes>
+                    </loewenstark_magesetup_sales_quote_config_get_product_attributes>
                 </observers>
             </sales_quote_config_get_product_attributes>     
         </events>
