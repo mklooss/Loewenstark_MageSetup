@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+  * Loewenstark_GermanSetup
+  *
+  * @category  Loewenstark
+  * @package   Loewenstark_GermanSetup
+  * @author    Mathis Klooss <m.klooss@loewenstark.com>
+  * @copyright 2013 Loewenstark Web-Solution GmbH (http://www.mage-profis.de/). All rights served.
+  * @license   https://github.com/mklooss/Loewenstark_UrlIndexer/blob/master/README.md
+  */
+-->
+<config>
+    <modules>
+        <Loewenstark_GermanSetup>
+            <version>1.0.0.0</version>
+        </Loewenstark_GermanSetup>
+    </modules>
+    <global>
+        <helpers>
+            <loewenstark_germansetup>
+                <class>Loewenstark_GermanSetup_Helper</class>
+            </loewenstark_germansetup>
+            <catalog>
+                <rewrite>
+                    <product_configuration>Loewenstark_GermanSetup_Helper_Catalog_Product_Configuration</product_configuration>
+                </rewrite>
+            </catalog>
+        </helpers>
+        <models>
+            <loewenstark_germansetup>
+                <class>Loewenstark_GermanSetup_Model</class>
+            </loewenstark_germansetup>
+        </models>
+        <events>
+            <sales_quote_config_get_product_attributes>
+                <observers>
+                    <loewenstark_germansetup_sales_quote_config_get_product_attributes>
+                        <type>singleton</type>
+                        <class>loewenstark_germansetup/observer</class>
+                        <method>addProductQuoteConfigAttributes</method>
+                    </loewenstark_germansetup_sales_quote_config_get_product_attributes>
+                </observers>
+            </sales_quote_config_get_product_attributes>     
+        </events>
+    </global>
+</config>
