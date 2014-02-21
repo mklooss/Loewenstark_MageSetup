@@ -35,7 +35,7 @@ class Loewenstark_MageSetup_Model_Observer
                     $attrList[] = $_attribute->getAttributeCode();
                     $observer->getAttributes()->setData($_attribute->getAttributeCode(), '');
                 }
-                Mage::app()->saveCache(implode(',', $attrList), self::CACHETAG, array('eav'), false);
+                Mage::app()->saveCache(implode(',', $attrList), 'loewenstark_magesetup', array('eav'), false);
             }
         }
     }
