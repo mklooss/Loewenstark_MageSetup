@@ -18,9 +18,10 @@ class Loewenstark_MageSetup_Model_Observer
     {
         if(Mage::helper('loewenstark_magesetup')->isOldMageSetup())
         {
-            if(Mage::app()->useCache('eav') && Mage::app()->loadCache(self::CACHETAG))
+            $cachetag = 'loewenstark_magesetup';
+            if(Mage::app()->useCache('eav') && Mage::app()->loadCache($cachetag))
             {
-                foreach(explode(',', Mage::app()->loadCache(self::CACHETAG)) as $_cacheRow)
+                foreach(explode(',', Mage::app()->loadCache($cachetag)) as $_cacheRow)
                 {
                     $observer->getAttributes()->setData($_cacheRow, '');
                 }
@@ -35,7 +36,7 @@ class Loewenstark_MageSetup_Model_Observer
                     $attrList[] = $_attribute->getAttributeCode();
                     $observer->getAttributes()->setData($_attribute->getAttributeCode(), '');
                 }
-                Mage::app()->saveCache(implode(',', $attrList), 'loewenstark_magesetup', array('eav'), false);
+                Mage::app()->saveCache(implode(',', $attrList), $cachetag, array('eav'), false);
             }
         }
     }
